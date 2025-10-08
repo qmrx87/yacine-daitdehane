@@ -145,11 +145,13 @@ function App() {
                   <FaArrowRight className="ms-2" />
                 </a>
                 <a
-                  href="./assets/Yacine_Dait_Dehane_CV.pdf"
+                  href="/resume.pdf"
                   className="btn btn-outline-light"
                   aria-label="Download resume"
                   target="_blank"
                   rel="noopener noreferrer"
+                  download="Yacine_Dait_Dehane_CV.pdf"
+
                 >
                   <FaFilePdf className="me-2" />
                   Download CV
