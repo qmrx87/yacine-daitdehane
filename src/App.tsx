@@ -145,7 +145,7 @@ function App() {
                   <FaArrowRight className="ms-2" />
                 </a>
                 <a
-                  href="/resume.pdf"
+                  href="./assets/Yacine_Dait_Dehane_CV.pdf"
                   className="btn btn-outline-light"
                   aria-label="Download resume"
                   target="_blank"
