@@ -24,16 +24,23 @@ import {
   FaRocket,
   FaCode,
   FaBrain,
+  FaTools,
+  FaChartLine,
+  FaDatabase,
+  FaAward,
 } from "react-icons/fa";
 import "./App.css";
-import profilePic from "./assets/unnamed.png";
-
+import profilePic from "./assets/pfp.png";
+import paperly_logo from "./assets/paperly_logo.png";
+import profynd_logo from "./assets/profynd_logo.jpg";
+import es3_logo from "./assets/es3_logo.png";
+import drug_logo from "./assets/drug_prescription_mining.png";
 const PROJECTS = [
   {
     title: "Paperly — AI Research Summarizer",
     desc: "OCR + LLM summarizer using GraphRAG & AgenticRAG. Deployed with Neo4j and RAG-driven search tailored to academic queries.",
     href: "https://github.com/ADHAYA-Technos/Automated-Information-Retrieval-and-Summarization-for-Academic-Research-Articles",
-    img: "https://via.placeholder.com/800x450/0f172a/ffffff?text=Paperly+Summarizer",
+    img: paperly_logo,
     badge: "NLP · RAG · PyTorch",
     icon: <FaBrain className="project-icon" />,
     featured: true,
@@ -42,7 +49,7 @@ const PROJECTS = [
     title: "ProFynd — Geo-Smart Tutor Finder",
     desc: "Mobile app to find tutors nearby with real-time matching and geolocation. Built with Android + Firebase.",
     href: "https://github.com/qmrx87/ProFynd-1.1",
-    img: "https://via.placeholder.com/800x450/06283D/ffffff?text=ProFynd+Geo+App",
+    img: profynd_logo,
     badge: "Android · Firebase",
     icon: <FaRocket className="project-icon" />,
     featured: true,
@@ -51,7 +58,7 @@ const PROJECTS = [
     title: "Drug Prescription Mining",
     desc: "Pattern-mining pipeline (ECLAT / FP-Growth) on 239K prescriptions with anomaly detection and Streamlit dashboard.",
     href: "https://github.com/ADHAYA-Technos/drug-prescription-pattern-mining",
-    img: "https://via.placeholder.com/800x450/063970/ffffff?text=Prescription+Mining",
+    img: drug_logo,
     badge: "Python · Data Mining",
     icon: <FaCode className="project-icon" />,
     featured: false,
@@ -60,7 +67,7 @@ const PROJECTS = [
     title: "ESI Smart Store",
     desc: "Full-stack inventory and store-management web app using React, Express and Firebase real-time updates.",
     href: "https://github.com/ADHAYA-Technos/magasin-esi",
-    img: "https://via.placeholder.com/800x450/0f5132/ffffff?text=ESI+Smart+Store",
+    img: es3_logo,
     badge: "React · Full-stack",
     icon: <FaCode className="project-icon" />,
     featured: false,
@@ -68,12 +75,14 @@ const PROJECTS = [
 ];
 
 const SKILLS = [
-  { name: "Python & PyTorch", level: 95 },
-  { name: "NLP & Transformers", level: 90 },
-  { name: "RAG Systems", level: 85 },
-  { name: "React & Full-Stack", level: 80 },
-  { name: "Data Engineering", level: 75 },
-  { name: "Cloud & Docker", level: 70 },
+  { name: "Python & PyTorch", level: 80, category: "AI/ML" },
+  { name: "NLP & Transformers", level: 75, category: "AI/ML" },
+  { name: "RAG Systems", level: 85, category: "AI/ML" },
+  { name: "React & Frontend", level: 70, category: "Engineering" },
+  { name: "Data Engineering", level: 75, category: "Data" },
+  { name: "Cloud & DevOps", level: 60, category: "Engineering" },
+  { name: "System Architecture", level: 85, category: "Engineering" },
+  { name: "Big Data Processing", level: 75, category: "Data" },
 ];
 
 function App() {
@@ -224,55 +233,169 @@ function App() {
         </Container>
       </section>
 
-      {/* Skills Section */}
-      <section id="skills" className="section-padding bg-light">
-        <Container>
-          <h2 className="section-title text-center mb-5">Technical Skills</h2>
-          <Row>
-            <Col lg={6}>
-              {SKILLS.map((skill, index) => (
-                <div key={skill.name} className="skill-item mb-4">
-                  <div className="d-flex justify-content-between mb-2">
-                    <span className="skill-name">{skill.name}</span>
-                    <span className="skill-percentage">{skill.level}%</span>
-                  </div>
-                  <div className="skill-bar">
-                    <div 
-                      className="skill-progress" 
-                      style={{ width: `${skill.level}%` }}
-                    ></div>
-                  </div>
+ {/* Skills Section */}
+<section id="skills" className="section-padding bg-light">
+  <Container>
+    <h2 className="section-title text-center mb-5">Technical Skills</h2>
+    
+    {/* Skills Overview Cards */}
+    <Row className="mb-5">
+      <Col md={4} className="mb-4">
+        <div className="skill-category-card">
+          <div className="skill-category-icon ai-icon">
+            <FaBrain />
+          </div>
+          <h5>AI & Machine Learning</h5>
+          <p>NLP, Deep Learning, Model Training & Fine-tuning</p>
+        </div>
+      </Col>
+      <Col md={4} className="mb-4">
+        <div className="skill-category-card">
+          <div className="skill-category-icon eng-icon">
+            <FaCode />
+          </div>
+          <h5>Engineering</h5>
+          <p>Full-stack Development, System Design, DevOps</p>
+        </div>
+      </Col>
+      <Col md={4} className="mb-4">
+        <div className="skill-category-card">
+          <div className="skill-category-icon data-icon">
+            <FaDatabase />
+          </div>
+          <h5>Data & Analytics</h5>
+          <p>Data Engineering, Analytics, Big Data Processing</p>
+        </div>
+      </Col>
+    </Row>
+
+    <Row>
+      <Col lg={6}>
+        <Card className="skills-progress-card mb-4">
+          <Card.Body>
+            <h5 className="card-title-with-icon">
+              <FaChartLine className="me-2" />
+              Core Competencies
+            </h5>
+            {SKILLS.map((skill, index) => (
+              <div key={skill.name} className="skill-item mb-4">
+                <div className="d-flex justify-content-between align-items-center mb-2">
+                  <span className="skill-name">{skill.name}</span>
+                  <span className="skill-percentage">{skill.level}%</span>
                 </div>
-              ))}
-            </Col>
-            <Col lg={6}>
-              <Card className="tech-highlights-card">
-                <Card.Body>
-                  <h5 className="mb-4">Tech Stack</h5>
-                  <Row>
-                    <Col sm={6}>
-                      <ul className="tech-list">
-                        <li>Python & PyTorch</li>
-                        <li>Hugging Face</li>
-                        <li>TensorFlow</li>
-                        <li>Spark</li>
-                      </ul>
-                    </Col>
-                    <Col sm={6}>
-                      <ul className="tech-list">
-                        <li>React & Next.js</li>
-                        <li>Docker & AWS</li>
-                        <li>Neo4j & Chroma</li>
-                        <li>FastAPI</li>
-                      </ul>
-                    </Col>
-                  </Row>
-                </Card.Body>
-              </Card>
-            </Col>
-          </Row>
-        </Container>
-      </section>
+                <div className="skill-bar">
+                  <div 
+                    className="skill-progress" 
+                    style={{ width: `${skill.level}%` }}
+                    data-level={skill.level}
+                  ></div>
+                </div>
+              </div>
+            ))}
+          </Card.Body>
+        </Card>
+      </Col>
+      
+      <Col lg={6}>
+        <Card className="tech-highlights-card mb-4">
+          <Card.Body>
+            <h5 className="card-title-with-icon">
+              <FaTools className="me-2" />
+              Technologies & Tools
+            </h5>
+            <Row>
+              <Col md={6}>
+                <div className="tech-category">
+                  <h6>AI/ML & Data Science</h6>
+                  <ul className="tech-list">
+                    <li>Python & PyTorch</li>
+                    <li>Hugging Face Transformers</li>
+                    <li>Scikit-learn & Pandas</li>
+                    <li>Apache Spark</li>
+                    <li>MLflow & Weights & Biases</li>
+                  </ul>
+                </div>
+                
+                <div className="tech-category">
+                  <h6>Backend & Databases</h6>
+                  <ul className="tech-list">
+                    <li>FastAPI & Flask</li>
+                    <li>Node.js & Express</li>
+                    <li>Neo4j & ChromaDB</li>
+                    
+                  </ul>
+                </div>
+              </Col>
+              
+              <Col md={6}>
+                <div className="tech-category">
+                  <h6>Frontend & Mobile</h6>
+                  <ul className="tech-list">
+                    <li>React & Next.js</li>
+                    <li>TypeScript & JavaScript</li>
+                    <li>Bootstrap & Tailwind</li>
+                    <li>Android Development</li>
+                  </ul>
+                </div>
+                
+                <div className="tech-category">
+                  <h6>DevOps & Cloud</h6>
+                  <ul className="tech-list">
+                    <li>Docker & Kubernetes</li>
+                    <li>Linux & Bash</li>
+                    <li>Firebase & Supabase</li>
+                  </ul>
+                </div>
+              </Col>
+            </Row>
+          </Card.Body>
+        </Card>
+      </Col>
+    </Row>
+{/*
+    {/* Certifications & Badges 
+    <Row className="mt-5">
+      <Col>
+        <Card className="certifications-card">
+          <Card.Body>
+            <h5 className="text-center mb-4">
+              <FaAward className="me-2" />
+              Certifications & Specializations
+            </h5>
+            <Row className="text-center">
+              <Col md={3} className="mb-3">
+                <div className="certification-item">
+                  <div className="cert-badge">NLP</div>
+                  <small>Advanced Natural Language Processing</small>
+                </div>
+              </Col>
+              <Col md={3} className="mb-3">
+                <div className="certification-item">
+                  <div className="cert-badge">ML</div>
+                  <small>Machine Learning Engineering</small>
+                </div>
+              </Col>
+              <Col md={3} className="mb-3">
+                <div className="certification-item">
+                  <div className="cert-badge">Cloud</div>
+                  <small>AWS Cloud Practitioner</small>
+                </div>
+              </Col>
+              <Col md={3} className="mb-3">
+                <div className="certification-item">
+                  <div className="cert-badge">Data</div>
+                  <small>Data Engineering Fundamentals</small>
+                </div>
+              </Col>
+            </Row>
+          </Card.Body>
+        </Card>
+      </Col>
+    </Row>
+  
+*/}
+</Container>
+</section>
 
       {/* Projects Section */}
       <section id="projects" className="section-padding">
