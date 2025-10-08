@@ -451,19 +451,26 @@ function App() {
           {/* Leadership Roles */}
           <div className="timeline-category">Leadership & Entrepreneurship</div>
           
-          <div className="timeline-item">
-            <div className="timeline-date">2021 – Present</div>
-            <div className="timeline-content">
-              <h5>Founder & Marketing Director</h5>
-              <span className="company">Tisharwatt</span>
-              <p>
-                Launched and scaled an e-commerce brand from concept to market, 
-                driving product strategy and organic growth through data-driven 
-                marketing approaches.
-              </p>
-            </div>
-          </div>
-          
+       <div className="timeline-item">
+  <div className="timeline-date">2021 – Present</div>
+  <div className="timeline-content">
+    <h5>Founder & Marketing Director</h5>
+    <span className="company">
+      <a 
+        href="https://instagram.com/tisharwatt" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="company-link"
+      >
+        Tisharwatt
+      </a>
+    </span>
+    <p>
+      Founded and managed an online clothing store, leading market research, branding, and customer engagement
+strategies to build a loyal base through organic marketing.
+    </p>
+  </div>
+</div>
           <div className="timeline-item">
             <div className="timeline-date">2023 – Present</div>
             <div className="timeline-content">
