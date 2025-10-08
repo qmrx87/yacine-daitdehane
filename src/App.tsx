@@ -158,7 +158,7 @@ function App() {
               <div className="hero-stats mt-5">
                 <Row>
                   <Col xs={4} className="text-center">
-                    <div className="stat-number">10+</div>
+                    <div className="stat-number">5+</div>
                     <div className="stat-label">Projects</div>
                   </Col>
                   <Col xs={4} className="text-center">
