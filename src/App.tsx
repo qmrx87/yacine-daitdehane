@@ -560,7 +560,7 @@ strategies to build a loyal base through organic marketing.
                   <FaGithub />
                 </a>
                 <a
-                  href="https://twitter.com/yacine_ai"
+                  href="https://twitter.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Twitter"
